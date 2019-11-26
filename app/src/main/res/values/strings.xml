@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">HamsterCare</string>
+    <string name="default_hamster_name">Hamster1</string>
+
+    <string name="contactUs">
+        Email: kwali5ying@gmail.com
+        \nPhone: +65 90100463
+        \nLocation: Singapore University of Technology and Design
+        \n          8 Somapah Rd, Singapore 487372
+    </string>
+
+    <string name="version">
+        HamsterCare v1.1
+        \nCredits to Professors Norman Lee and Cheung Ngai-Mann for their guidance and support
+    </string>
+
+    <string name="helpBottomNav">
+        The bottom navigation bar allows movement between the primary functions in the app.
+        \nIt is split into 3 tabs - Feed, Photo and Help (from left to right).
+    </string>
+
+    <string name="feedTab">
+        Topping up food and water is done here.
+        \nThe left column displays information about the previous top-up of food, the amount of
+        food left, and allows the top-up of food through the \"Feed Me Food!\" button.
+        \nThe right column displays information about the previous top-up of water, the amount of
+        water left, and allows the top-up of water through the \"Feed Me Water!\" button.
+        \nAt the bottom, automatic topping-up of food and water is enabled/disabled by toggling the
+        switch on/off.
+    </string>
+
+    <string name="photoTab">
+        You can take a picture of your hamster at any point of time to see how it is doing.
+        \nSimply do so through the \"Snap A Picture!\" button.
+    </string>
+
+    <string name="helpTab">
+        Basic information about how to use the app is stated here.
+        \nAny feedback or further issues can be sent to us via the contact information provided.
+    </string>
+</resources>

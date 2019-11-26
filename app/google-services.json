@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "153349674908",
+    "firebase_url": "https://hamstercare-8f872.firebaseio.com",
+    "project_id": "hamstercare-8f872",
+    "storage_bucket": "hamstercare-8f872.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:153349674908:android:3ff555828a480700615a59",
+        "android_client_info": {
+          "package_name": "com.example.hamstercare"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "153349674908-saf9rtue4h6jsopvpk8qhehfbf2r3in4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAdov3EU3aR_OugfUcc2SXl8U6ChCavAO8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "153349674908-saf9rtue4h6jsopvpk8qhehfbf2r3in4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
