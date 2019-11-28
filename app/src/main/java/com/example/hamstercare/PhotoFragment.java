@@ -57,7 +57,7 @@ public class PhotoFragment extends Fragment {
         view = inflater.inflate(R.layout.fragment_photo, container, false);
 
         // Find views needed
-        hamsterName2 = view.findViewById(R.id.hamsterName2);
+        hamsterName2 = view.findViewById(R.id.hamsterDesc);
         fab = view.findViewById(R.id.fab);
         photoProgressBar = view.findViewById(R.id.photoProgressBar);
         hamsterPhoto = view.findViewById(R.id.hamsterPhoto);
@@ -68,7 +68,7 @@ public class PhotoFragment extends Fragment {
         // Retrieve the value using the key, and set a default when there is none
         String defaultValue = getResources().getString(R.string.default_hamster_name);
         name = mPreferences.getString(NAME_KEY, defaultValue);
-        hamsterName2.setText("Hello, " + name + "!");
+        hamsterName2.setText("Check " + name + "'s current activity.");
 
         // Get Database References
         FirebaseDatabase database = FirebaseDatabase.getInstance();

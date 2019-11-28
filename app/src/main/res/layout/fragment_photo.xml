@@ -5,25 +5,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/hamsterName2"
-        android:text="Hello, Hamster1!"
-        android:textSize="40sp"
-        android:textStyle="bold"
-        android:gravity="center"
-        android:paddingTop="20sp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
 
     <TextView
-        android:id="@+id/photoDate"
-        android:text="Insert Date Here"
-        android:textSize="15sp"
-        android:gravity="left"
-        android:paddingHorizontal="10sp"
-        android:layout_above="@id/hamsterPhoto"
+        android:id="@+id/hamsterDesc"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:text="Check HAMSTER1's current activity."
+        android:textSize="15sp"
+        android:gravity="center"
+        android:layout_marginTop="15dp"/>
+
+    <View
+        android:layout_below="@id/hamsterDesc"
+        android:layout_margin="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#c0c0c0"/>
 
     <ImageView
         android:id="@+id/hamsterPhoto"

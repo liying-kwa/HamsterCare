@@ -4,28 +4,60 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginHorizontal="5sp">
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp">
 
     <TextView
-        android:text="Hamster's Name: "
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:id="@+id/mainDescText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:text="Change your hamster's settings."
+        android:textSize="15sp" />
 
-    <EditText
-        android:id="@+id/editName"
-        android:hint="Insert Name Here"
-        android:textSize="20sp"
-        android:gravity="center_vertical"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_margin="15dp"
+        android:background="#c0c0c0" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical">
+        <TextView
+            android:id="@+id/hamsterNameTitle"
+            android:text="Hamster's Name: "
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <EditText
+            android:id="@+id/editName"
+            android:hint="HAMSTER1"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:maxLength="15"
+            android:textColor="@android:color/tertiary_text_light"/>
+    </LinearLayout>
 
     <LinearLayout
         android:orientation="horizontal"
         android:layout_marginTop="30sp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:gravity="center">
 
         <TextView
             android:text="Hamster's Profile Picture: "
@@ -35,11 +67,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
-        <Button
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/chooseImage"
-            android:text="Choose"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_file_upload_black_24dp"
+            app:fabSize="mini"
+            android:backgroundTint="@color/colorUIPrimary"
+            android:layout_margin="10dp"/>
+
+<!--        <Button-->
+<!--            android:id="@+id/chooseImage"-->
+<!--            android:text="Choose"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"/>-->
 
     </LinearLayout>
 
@@ -48,16 +89,21 @@
         app:srcCompat="@drawable/ic_hamster_svgrepo_com"
         android:layout_marginTop="20sp"
         android:layout_gravity="center"
-        android:layout_width="200dp"
-        android:layout_height="200dp"/>
+        android:layout_width="150dp"
+        android:layout_height="150dp"/>
 
-    <Button
-        android:id="@+id/saveChanges"
-        android:text="Save Changes"
-        android:textSize="20sp"
-        android:layout_marginTop="20sp"
-        android:layout_gravity="center|bottom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="end|center">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/saveChanges"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_check_black_24dp"
+            android:backgroundTint="#0E7800"
+            android:layout_margin="10dp"/>
+    </LinearLayout>
 
 </LinearLayout>

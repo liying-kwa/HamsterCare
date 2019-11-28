@@ -28,6 +28,7 @@ public class MainFragment extends Fragment {
     Bitmap imageBitmap;
     TextView hamsterName;
     ImageView hamsterDpMain;
+    TextView mainDescText;
 
     public MainFragment() {
         // Required empty public constructor
@@ -43,6 +44,7 @@ public class MainFragment extends Fragment {
         // Get views needed
         hamsterName = view.findViewById(R.id.hamsterName);
         hamsterDpMain = view.findViewById(R.id.hamsterDpMain);
+        mainDescText = view.findViewById(R.id.mainDescText);
 
         // Get a reference to the sharedPreferences object
         mPreferences = getContext().getSharedPreferences(sharedPrefFile, MODE_PRIVATE);
@@ -51,9 +53,18 @@ public class MainFragment extends Fragment {
 
         // Display hamster name and profile picture
         name = mPreferences.getString(NAME_KEY, defaultValue);
-        hamsterName.setText(name);
-        imageBitmap = decodeBase64(mPreferences.getString(IMAGE_KEY, defaultValue));
-        hamsterDpMain.setImageBitmap(imageBitmap);
+        hamsterName.setText("Hello, " + name + "!");
+        mainDescText.setText("Check " + name + "'s food and water levels.");
+
+        String imageName = mPreferences.getString(IMAGE_KEY, defaultValue);
+
+        if (imageName.equals(defaultValue)) {
+            hamsterDpMain.setImageResource(R.drawable.ic_hamster_svgrepo_com);
+        } else {
+            imageBitmap = decodeBase64(mPreferences.getString(IMAGE_KEY, defaultValue));
+            hamsterDpMain.setImageBitmap(imageBitmap);
+        }
+
 
         return view;
     }

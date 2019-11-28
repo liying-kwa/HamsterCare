@@ -18,9 +18,12 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.io.ByteArrayOutputStream;
 
@@ -36,8 +39,8 @@ public class SettingsFragment extends Fragment {
     public static final String IMAGE_KEY = "IMAGE_KEY";
     public static final int PICK_IMAGE_REQUEST = 1;
     String name;
-    Button chooseImage;
-    Button saveChanges;
+    FloatingActionButton chooseImage;
+    FloatingActionButton saveChanges;
     EditText editName;
     ImageView hamsterDpSettings;
     Bitmap newImageBitmap;
@@ -110,6 +113,7 @@ public class SettingsFragment extends Fragment {
                 // Save image to sharedPreferences
                 editor.putString(IMAGE_KEY, encodeTobase64(newImageBitmap));
                 editor.apply();
+                Toast.makeText(view.getContext(), "Settings saved!", Toast.LENGTH_LONG).show();
             }
         });
 
