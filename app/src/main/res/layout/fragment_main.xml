@@ -12,8 +12,8 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/colorUIPrimary"
+            android:layout_height="210dp"
+            android:background="@android:color/white"
             android:elevation="5dp"
             android:orientation="vertical">
 
@@ -28,20 +28,6 @@
             <!--                    android:outlineProvider="none"-->
             <!--                    android:elevation="2dp"/>-->
 
-            <com.mikhaellopez.circularimageview.CircularImageView
-                android:id="@+id/hamsterDpMain"
-                android:layout_width="125dp"
-                android:layout_height="125dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="10dp"
-                android:background="@color/colorUIPrimary"
-                android:src="@drawable/ic_hamster_svgrepo_com"
-                app:civ_border_color="#333"
-                app:civ_border_width="2dp"
-                app:civ_shadow="true"
-                app:civ_shadow_color="#333"
-                app:civ_shadow_radius="10" />
-
 
             <!--            <ImageView-->
             <!--                android:layout_marginTop="10dp"-->
@@ -52,17 +38,49 @@
             <!--                android:layout_height="100dp"-->
             <!--                android:outlineProvider="bounds"/>-->
 
-            <TextView
-                android:id="@+id/hamsterName"
+
+            <RelativeLayout
+                android:id="@+id/today"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:gravity="center"
-                android:text="Hello, HAMSTER1!"
-                android:textColor="#fff"
-                android:textSize="35sp"
-                android:textStyle="bold" />
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp">
 
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/img" />
+
+                <com.mikhaellopez.circularimageview.CircularImageView
+                    android:id="@+id/hamsterDpMain"
+                    android:layout_width="125dp"
+                    android:layout_height="125dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="15dp"
+                    android:src="@drawable/ic_hamster_svgrepo_com"
+                    app:civ_shadow_radius="2"
+                    app:civ_shadow_color="#333"
+                    app:civ_shadow="true"
+                    app:civ_border_color="#FFF"
+                    app:civ_border_width="2dp" />
+
+                <TextView
+                    android:id="@+id/hamsterName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:fontFamily="@font/montserrat"
+                    android:gravity="center"
+                    android:paddingBottom="20dp"
+                    android:text="Welcome back!"
+                    android:textColor="#fff"
+                    android:textSize="21sp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
         </LinearLayout>
 
         <LinearLayout
@@ -80,7 +98,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
                 android:gravity="center"
-                android:text="Check HAMSTER1's food and water levels."
+                android:text="Check Hammy's food and water levels."
                 android:textSize="15sp" />
 
             <View
@@ -108,16 +126,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="15dp"
-                app:cardCornerRadius="10dp"
-                android:background="#e3e3e3">
+                app:cardBackgroundColor="#97AFD3"
+                app:cardCornerRadius="10dp">
 
                 <RelativeLayout
                     android:id="@+id/leftLinearLayout"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:orientation="horizontal"
-                    android:background="#30e8e8eb">
+                    android:orientation="horizontal">
 
                     <View
                         android:id="@+id/foodViewBanner"
@@ -125,33 +142,35 @@
                         android:layout_height="wrap_content"
                         android:layout_alignBottom="@id/foodText"
                         android:layout_alignParentTop="true"
-                        android:background="@color/colorUITitle" />
+                        android:background="@color/colorUIPrimary" />
 
                     <TextView
                         android:id="@+id/foodText"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_black"
                         android:paddingStart="20dp"
                         android:paddingTop="10dp"
                         android:paddingBottom="10dp"
                         android:text="Food"
                         android:textColor="@android:color/white"
-                        android:textSize="25sp"/>
+                        android:textSize="21sp"
+                        android:typeface="normal" />
 
-                        <Button
-                            android:layout_alignTop="@id/foodText"
-                            android:layout_alignRight="@id/foodViewBanner"
-                            android:layout_alignBottom="@id/foodText"
-                            android:layout_marginRight="30dp"
-                            android:id="@+id/topUpFood"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:text="Top-Up Food!"
-                            android:textColor="@android:color/white"
-                            android:gravity="center"
-                            android:textSize="17sp"
-                            android:backgroundTint="@color/colorUIAccent"/>
+                    <Button
+                        android:id="@+id/topUpFood"
+                        android:layout_width="160dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@id/foodText"
+                        android:layout_alignRight="@id/foodViewBanner"
+                        android:layout_alignBottom="@id/foodText"
+                        android:layout_gravity="center"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/custom_button_blue"
+                        android:gravity="center"
+                        android:text="Top-Up Food!"
+                        android:textColor="@android:color/white"
+                        android:textSize="17sp" />
 
                     <LinearLayout
                         android:id="@+id/foodPictureCard"
@@ -160,10 +179,10 @@
                         android:layout_below="@+id/foodText"
                         android:layout_alignParentStart="true"
                         android:layout_alignParentEnd="true"
-                        android:layout_marginTop="15dp"
-                        android:layout_marginBottom="15dp"
                         android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp">
+                        android:layout_marginTop="15dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="15dp">
 
                         <androidx.cardview.widget.CardView
                             android:layout_width="125dp"
@@ -192,17 +211,19 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:fontFamily="@font/roboto_black"
                                 android:text="Amount: "
-                                android:textSize="23sp"/>
+                                android:textSize="21sp" />
 
                             <TextView
                                 android:id="@+id/foodAmtText"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:fontFamily="@font/roboto"
                                 android:text="Full"
                                 android:textAlignment="center"
                                 android:textColor="@color/colorAccept"
-                                android:textSize="25sp" />
+                                android:textSize="21sp" />
                         </LinearLayout>
                     </LinearLayout>
 
@@ -214,7 +235,7 @@
                         android:layout_alignBottom="@id/foodPictureCard"
                         android:layout_marginRight="10dp"
                         android:text="Last Top-Up: 27 Nov 2019"
-                        android:textSize="15sp" />
+                        android:textSize="12sp" />
 
 
                 </RelativeLayout>
@@ -230,6 +251,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="15dp"
+                app:cardBackgroundColor="@color/colorRejectLight"
                 app:cardCornerRadius="10dp">
 
                 <RelativeLayout
@@ -237,8 +259,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:orientation="horizontal"
-                    android:background="#30e8e8eb">
+                    android:background="#30e8e8eb"
+                    android:orientation="horizontal">
+
 
                     <View
                         android:id="@+id/waterViewBanner"
@@ -246,34 +269,35 @@
                         android:layout_height="wrap_content"
                         android:layout_alignBottom="@id/waterText"
                         android:layout_alignParentTop="true"
-                        android:background="@color/colorRejectLight" />
+                        android:background="@color/colorReject" />
 
 
                     <TextView
                         android:id="@+id/waterText"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_black"
                         android:paddingStart="20dp"
                         android:paddingTop="10dp"
                         android:paddingBottom="10dp"
                         android:text="Water"
                         android:textColor="@android:color/white"
-                        android:textSize="25sp" />
+                        android:textSize="21sp" />
 
                     <Button
                         android:id="@+id/topUpWater"
+                        android:layout_width="160dp"
+                        android:layout_height="wrap_content"
                         android:layout_alignTop="@id/waterText"
                         android:layout_alignRight="@id/waterViewBanner"
                         android:layout_alignBottom="@id/waterText"
-                        android:text="Top-Up Water!"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:textColor="@android:color/white"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/custom_button_red"
                         android:gravity="center"
-                        android:textSize="17sp"
-                        android:backgroundTint="@color/colorReject"
-                        android:layout_marginRight="30dp" />
+                        android:text="Top-Up Water!"
+                        android:textColor="@android:color/white"
+                        android:textSize="17sp" />
                     />
 
                     <LinearLayout
@@ -283,10 +307,10 @@
                         android:layout_below="@+id/waterText"
                         android:layout_alignParentStart="true"
                         android:layout_alignParentEnd="true"
-                        android:layout_marginTop="15dp"
-                        android:layout_marginBottom="15dp"
                         android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp">
+                        android:layout_marginTop="15dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="15dp">
 
 
                         <androidx.cardview.widget.CardView
@@ -315,17 +339,19 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:fontFamily="@font/roboto_black"
                                 android:text="Amount: "
-                                android:textSize="23sp"/>
+                                android:textSize="21sp" />
 
                             <TextView
                                 android:id="@+id/waterAmtText"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:fontFamily="@font/roboto"
                                 android:text="Empty"
                                 android:textAlignment="center"
                                 android:textColor="@color/colorReject"
-                                android:textSize="25sp" />
+                                android:textSize="21sp" />
                         </LinearLayout>
                     </LinearLayout>
 
@@ -338,7 +364,7 @@
                         android:layout_marginRight="10dp"
                         android:gravity="center"
                         android:text="Last Top-Up: 27 Nov 2019"
-                        android:textSize="15sp" />
+                        android:textSize="12sp" />
 
                 </RelativeLayout>
 

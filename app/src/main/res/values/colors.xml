@@ -5,10 +5,10 @@
     <color name="colorAccent">#1469C4</color>
     <color name="colorPrimaryLight">#B3D3E8</color>
     <color name="colorBgLight">#EEFCFF</color>
-    <color name="colorUIPrimary">#42678F</color>
+    <color name="colorUIPrimary">#514A9D   </color>
     <color name="colorUITitle">#A7C5D9</color>
     <color name="colorUIAccent">#91ABBD</color>
     <color name="colorAccept">#0E7800</color>
     <color name="colorReject">#BC2A1F</color>
-    <color name="colorRejectLight">#D94723</color>
+    <color name="colorRejectLight">#FF9C9C</color>
 </resources>

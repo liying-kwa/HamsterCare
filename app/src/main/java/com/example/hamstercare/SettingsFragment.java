@@ -64,13 +64,14 @@ public class SettingsFragment extends Fragment {
 
         // Get a reference to the sharedPreferences object
         mPreferences = getContext().getSharedPreferences(sharedPrefFile, MODE_PRIVATE);
-        // Retrieve the value using the key, and set a default when there is none
-        String defaultValue = getResources().getString(R.string.default_hamster_name);
 
-        // Set up current name and profile picture
+        // Retrieve and set up current name and profile picture, and set defaults when there are none
+        String defaultValue = getResources().getString(R.string.default_hamster_name);
+        String defaultImage = encodeTobase64(drawableToBitmap(getResources()
+                .getDrawable(R.drawable.ic_hamster_svgrepo_com)));
         name = mPreferences.getString(NAME_KEY, defaultValue);
         editName.setText(name);
-        Bitmap imageBitmap = decodeBase64(mPreferences.getString(IMAGE_KEY, defaultValue));
+        Bitmap imageBitmap = decodeBase64(mPreferences.getString(IMAGE_KEY, defaultImage));
         hamsterDpSettings.setImageBitmap(imageBitmap);
         newImageBitmap = imageBitmap;
 
