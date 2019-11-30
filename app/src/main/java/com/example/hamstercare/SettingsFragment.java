@@ -21,12 +21,25 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FileDownloadTask;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.IOException;
 
 import static android.app.Activity.RESULT_OK;
 import static android.content.Context.MODE_PRIVATE;
@@ -46,6 +59,7 @@ public class SettingsFragment extends Fragment {
     EditText editName;
     ImageView hamsterDpSettings;
     Bitmap newImageBitmap;
+    String url;
 
     public SettingsFragment() {
         // Required empty public constructor
@@ -77,13 +91,28 @@ public class SettingsFragment extends Fragment {
         hamsterDpSettings.setImageBitmap(imageBitmap);
         newImageBitmap = imageBitmap;
 
+        // Firebase references
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        final DatabaseReference picUrl = database.getReference("picUrl");
+        picUrl.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                url = dataSnapshot.getValue(String.class);
+            }
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                Log.i("jinghan", "Failed to read value.", error.toException());
+            }
+        });
+
         // Choose image from 3 options - Default, Gallery, or Photo
         chooseImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String[] choices = {"Default", "Gallery", "Photo"};
+                String[] choices = {"Default", "Gallery", "Phone Camera", "Latest HamsterCare Photo"};
                 AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-                builder.setTitle("Choose image");
+                builder.setTitle("Choose Image");
                 builder.setItems(choices, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
@@ -98,11 +127,30 @@ public class SettingsFragment extends Fragment {
                             intent.setType("image/*");
                             startActivityForResult(intent, PICK_IMAGE_REQUEST);
                         } else if (which == 2) {
-                            // Take photo using camera
+                            // Take photo using phone camera
                             Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                             if (takePictureIntent.resolveActivity(getActivity().getPackageManager()) != null) {
                                 startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
                             }
+                        } else if (which == 3) {
+                            // Choose latest photo of hamster
+                            FirebaseStorage storage = FirebaseStorage.getInstance();
+                            StorageReference httpsRef = storage.getReferenceFromUrl(url);
+                            try {
+                                final File localFile = File.createTempFile("images", "jpg");
+                                httpsRef.getFile(localFile).addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
+                                    @Override
+                                    public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
+                                        Bitmap bitmap = BitmapFactory.decodeFile(localFile.getAbsolutePath());
+                                        hamsterDpSettings.setImageBitmap(bitmap);
+                                        newImageBitmap = bitmap;
+                                    }
+                                }).addOnFailureListener(new OnFailureListener() {
+                                    @Override
+                                    public void onFailure(@NonNull Exception exception) {
+                                    }
+                                });
+                            } catch (IOException e ) {}
                         }
                     }
                 });
