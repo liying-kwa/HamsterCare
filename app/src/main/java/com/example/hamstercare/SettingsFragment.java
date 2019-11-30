@@ -10,6 +10,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.util.Base64;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -38,6 +39,7 @@ public class SettingsFragment extends Fragment {
     public static final String NAME_KEY = "NAME_KEY";
     public static final String IMAGE_KEY = "IMAGE_KEY";
     public static final int PICK_IMAGE_REQUEST = 1;
+    static final int REQUEST_IMAGE_CAPTURE = 2;
     String name;
     FloatingActionButton chooseImage;
     FloatingActionButton saveChanges;
@@ -95,6 +97,12 @@ public class SettingsFragment extends Fragment {
                             Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
                             intent.setType("image/*");
                             startActivityForResult(intent, PICK_IMAGE_REQUEST);
+                        } else if (which == 2) {
+                            // Take photo using camera
+                            Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                            if (takePictureIntent.resolveActivity(getActivity().getPackageManager()) != null) {
+                                startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
+                            }
                         }
                     }
                 });
@@ -125,13 +133,17 @@ public class SettingsFragment extends Fragment {
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if(requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK
-                && data != null && data.getData() != null )
-        {
+                && data != null && data.getData() != null ) {
             Bitmap thumbnail = data.getParcelableExtra("data");
             Uri fullPhotoUri = data.getData();
             // bitmap = MediaStore.Images.Media.getBitmap(getActivity().getContentResolver(), fullPhotoUri);
             hamsterDpSettings.setImageURI(fullPhotoUri);
             newImageBitmap = ((BitmapDrawable)hamsterDpSettings.getDrawable()).getBitmap();
+        } else if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
+            Bundle extras = data.getExtras();
+            Bitmap imageBitmap = (Bitmap) extras.get("data");
+            hamsterDpSettings.setImageBitmap(imageBitmap);
+            newImageBitmap = imageBitmap;
         }
     }
 
