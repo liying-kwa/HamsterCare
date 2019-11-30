@@ -110,9 +110,11 @@ public class SettingsFragment extends Fragment {
         chooseImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String[] choices = {"Default", "Gallery", "Phone Camera", "Latest HamsterCare Photo"};
+                String[] choices = {"Default Picture",
+                        "Choose from Gallery",
+                        "Take a Photo", "Latest HamsterCare Photo"};
                 AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-                builder.setTitle("Choose Image");
+                builder.setTitle("Upload Image");
                 builder.setItems(choices, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
