@@ -127,7 +127,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="15dp"
-                app:cardBackgroundColor="@color/colorUIPrimaryLight"
+                app:cardBackgroundColor="@color/colorGREYlight"
                 app:cardCornerRadius="10dp">
 
                 <RelativeLayout
@@ -143,7 +143,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignBottom="@id/foodText"
                         android:layout_alignParentTop="true"
-                        android:background="@color/colorUIPrimary" />
+                        android:background="@color/colorGREYdefault" />
 
                     <TextView
                         android:id="@+id/foodText"
@@ -167,7 +167,7 @@
                         android:layout_alignBottom="@id/foodText"
                         android:layout_gravity="center"
                         android:layout_margin="5dp"
-                        android:background="@drawable/custom_button_blue"
+                        android:background="@drawable/custom_button_grey"
                         android:gravity="center"
                         android:text="Top-Up Food!"
                         android:textColor="@android:color/white"
@@ -253,7 +253,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="15dp"
-                app:cardBackgroundColor="@color/colorRejectLight"
+                app:cardBackgroundColor="@color/colorGREYlight"
                 app:cardCornerRadius="10dp">
 
                 <RelativeLayout
@@ -271,7 +271,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignBottom="@id/waterText"
                         android:layout_alignParentTop="true"
-                        android:background="@color/colorReject" />
+                        android:background="@color/colorGREYdefault" />
 
 
                     <TextView
@@ -295,7 +295,7 @@
                         android:layout_alignBottom="@id/waterText"
                         android:layout_gravity="center"
                         android:layout_margin="5dp"
-                        android:background="@drawable/custom_button_red"
+                        android:background="@drawable/custom_button_grey"
                         android:gravity="center"
                         android:text="Top-Up Water!"
                         android:textColor="@android:color/white"

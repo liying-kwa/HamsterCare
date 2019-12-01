@@ -146,9 +146,9 @@ public class MainFragment extends Fragment {
                     foodAmtText.setText("Full");
                     foodAmtText.setTextColor(ContextCompat.getColor(getContext(), R.color.colorAccept));
                     foodPicture.setImageResource(R.drawable.ic_food_full);
-                    foodViewBanner.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.colorUIPrimary));
-                    foodCardBackground.setCardBackgroundColor(ContextCompat.getColor(getContext(), R.color.colorUIPrimaryLight));
-                    topUpFoodButton.setBackground(getResources().getDrawable(R.drawable.custom_button_blue));
+                    foodViewBanner.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.colorFULL));
+                    foodCardBackground.setCardBackgroundColor(ContextCompat.getColor(getContext(), R.color.colorFULLlight));
+                    topUpFoodButton.setBackground(getResources().getDrawable(R.drawable.custom_button_grey));
                 } else if (foodValue.equals("mid")) {
                     foodAmtText.setText("Mid");
                     foodAmtText.setTextColor(ContextCompat.getColor(getContext(), R.color.colorAccept));
@@ -187,6 +187,7 @@ public class MainFragment extends Fragment {
                     Toast.makeText(getActivity(), "Food is full!", Toast.LENGTH_LONG).show();
                 } else {
                     topUpFood.setValue("true");
+                    Toast.makeText(getActivity(), "Food is added!", Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -218,9 +219,9 @@ public class MainFragment extends Fragment {
                     waterAmtText.setText("Full");
                     waterAmtText.setTextColor(ContextCompat.getColor(getContext(), R.color.colorAccept));
                     waterPicture.setImageResource(R.drawable.ic_water_full);
-                    waterViewBanner.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.colorUIPrimary));
-                    waterCardBackground.setCardBackgroundColor(ContextCompat.getColor(getContext(), R.color.colorUIPrimaryLight));
-                    topUpWaterButton.setBackground(getResources().getDrawable(R.drawable.custom_button_blue));
+                    waterViewBanner.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.colorFULL));
+                    waterCardBackground.setCardBackgroundColor(ContextCompat.getColor(getContext(), R.color.colorFULLlight));
+                    topUpWaterButton.setBackground(getResources().getDrawable(R.drawable.custom_button_grey));
                 } else if (waterValue.equals("mid")) {
                     waterAmtText.setText("Mid");
                     waterAmtText.setTextColor(ContextCompat.getColor(getContext(), R.color.colorAccept));
@@ -259,6 +260,7 @@ public class MainFragment extends Fragment {
                     Toast.makeText(getActivity(), "Water is full!", Toast.LENGTH_LONG).show();
                 } else {
                     topUpWater.setValue("true");
+                    Toast.makeText(getActivity(), "Water is added!", Toast.LENGTH_LONG).show();
                 }
             }
         });
