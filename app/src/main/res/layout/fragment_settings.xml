@@ -73,7 +73,7 @@
             android:layout_height="wrap_content"
             android:src="@drawable/ic_file_upload_black_24dp"
             app:fabSize="mini"
-            android:backgroundTint="@color/colorUIPrimary"
+            android:backgroundTint="@color/colorMidHeader"
             android:layout_margin="10dp"/>
 
 <!--        <Button-->

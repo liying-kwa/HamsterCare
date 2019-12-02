@@ -144,31 +144,31 @@ public class MainFragment extends Fragment {
                 foodLevel = foodValue;
                 if (foodValue.equals("full")) {
                     foodAmtText.setText("Full");
-                    foodAmtText.setTextColor(ContextCompat.getColor(getContext(), R.color.colorAccept));
+                    foodAmtText.setTextColor(ContextCompat.getColor(getContext(), R.color.colorFullText));
                     foodPicture.setImageResource(R.drawable.ic_food_full);
-                    foodViewBanner.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.colorFULL));
-                    foodCardBackground.setCardBackgroundColor(ContextCompat.getColor(getContext(), R.color.colorFULLlight));
+                    foodViewBanner.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.colorFullHeader));
+                    foodCardBackground.setCardBackgroundColor(ContextCompat.getColor(getContext(), R.color.colorFullCard));
                     topUpFoodButton.setBackground(getResources().getDrawable(R.drawable.custom_button_grey));
                 } else if (foodValue.equals("mid")) {
                     foodAmtText.setText("Mid");
-                    foodAmtText.setTextColor(ContextCompat.getColor(getContext(), R.color.colorAccept));
+                    foodAmtText.setTextColor(ContextCompat.getColor(getContext(), R.color.colorFullText));
                     foodPicture.setImageResource(R.drawable.ic_food_mid);
-                    foodViewBanner.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.colorUIPrimary));
-                    foodCardBackground.setCardBackgroundColor(ContextCompat.getColor(getContext(), R.color.colorUIPrimaryLight));
+                    foodViewBanner.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.colorMidHeader));
+                    foodCardBackground.setCardBackgroundColor(ContextCompat.getColor(getContext(), R.color.colorMidCard));
                     topUpFoodButton.setBackground(getResources().getDrawable(R.drawable.custom_button_blue));
                 } else if (foodValue.equals("low")) {
                     foodAmtText.setText("Low");
-                    foodAmtText.setTextColor(ContextCompat.getColor(getContext(), R.color.colorReject));
+                    foodAmtText.setTextColor(ContextCompat.getColor(getContext(), R.color.colorEmptyText));
                     foodPicture.setImageResource(R.drawable.ic_food_low);
-                    foodViewBanner.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.colorReject));
-                    foodCardBackground.setCardBackgroundColor(ContextCompat.getColor(getContext(), R.color.colorRejectLight));
+                    foodViewBanner.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.colorEmptyText));
+                    foodCardBackground.setCardBackgroundColor(ContextCompat.getColor(getContext(), R.color.colorEmptyCard));
                     topUpFoodButton.setBackground(getResources().getDrawable(R.drawable.custom_button_red));
                 } else if (foodValue.equals("empty")) {
                     foodAmtText.setText("Empty");
-                    foodAmtText.setTextColor(ContextCompat.getColor(getContext(), R.color.colorReject));
+                    foodAmtText.setTextColor(ContextCompat.getColor(getContext(), R.color.colorEmptyText));
                     foodPicture.setImageResource(R.drawable.ic_food_empty);
-                    foodViewBanner.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.colorReject));
-                    foodCardBackground.setCardBackgroundColor(ContextCompat.getColor(getContext(), R.color.colorRejectLight));
+                    foodViewBanner.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.colorEmptyText));
+                    foodCardBackground.setCardBackgroundColor(ContextCompat.getColor(getContext(), R.color.colorEmptyCard));
                     topUpFoodButton.setBackground(getResources().getDrawable(R.drawable.custom_button_red));
                 }
             }
@@ -217,31 +217,31 @@ public class MainFragment extends Fragment {
                 waterLevel = waterValue;
                 if (waterValue.equals("full")) {
                     waterAmtText.setText("Full");
-                    waterAmtText.setTextColor(ContextCompat.getColor(getContext(), R.color.colorAccept));
+                    waterAmtText.setTextColor(ContextCompat.getColor(getContext(), R.color.colorFullText));
                     waterPicture.setImageResource(R.drawable.ic_water_full);
-                    waterViewBanner.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.colorFULL));
-                    waterCardBackground.setCardBackgroundColor(ContextCompat.getColor(getContext(), R.color.colorFULLlight));
+                    waterViewBanner.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.colorFullHeader));
+                    waterCardBackground.setCardBackgroundColor(ContextCompat.getColor(getContext(), R.color.colorFullCard));
                     topUpWaterButton.setBackground(getResources().getDrawable(R.drawable.custom_button_grey));
                 } else if (waterValue.equals("mid")) {
                     waterAmtText.setText("Mid");
-                    waterAmtText.setTextColor(ContextCompat.getColor(getContext(), R.color.colorAccept));
+                    waterAmtText.setTextColor(ContextCompat.getColor(getContext(), R.color.colorFullText));
                     waterPicture.setImageResource(R.drawable.ic_water_mid);
-                    waterViewBanner.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.colorUIPrimary));
-                    waterCardBackground.setCardBackgroundColor(ContextCompat.getColor(getContext(), R.color.colorUIPrimaryLight));
+                    waterViewBanner.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.colorMidHeader));
+                    waterCardBackground.setCardBackgroundColor(ContextCompat.getColor(getContext(), R.color.colorMidCard));
                     topUpWaterButton.setBackground(getResources().getDrawable(R.drawable.custom_button_blue));
                 } else if (waterValue.equals("low")) {
                     waterAmtText.setText("Low");
-                    waterAmtText.setTextColor(ContextCompat.getColor(getContext(), R.color.colorReject));
+                    waterAmtText.setTextColor(ContextCompat.getColor(getContext(), R.color.colorEmptyText));
                     waterPicture.setImageResource(R.drawable.ic_water_low);
-                    waterViewBanner.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.colorReject));
-                    waterCardBackground.setCardBackgroundColor(ContextCompat.getColor(getContext(), R.color.colorRejectLight));
+                    waterViewBanner.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.colorEmptyText));
+                    waterCardBackground.setCardBackgroundColor(ContextCompat.getColor(getContext(), R.color.colorEmptyCard));
                     topUpWaterButton.setBackground(getResources().getDrawable(R.drawable.custom_button_red));
                 } else if (waterValue.equals("empty")) {
                     waterAmtText.setText("Empty");
-                    waterAmtText.setTextColor(ContextCompat.getColor(getContext(), R.color.colorReject));
+                    waterAmtText.setTextColor(ContextCompat.getColor(getContext(), R.color.colorEmptyText));
                     waterPicture.setImageResource(R.drawable.ic_water_empty);
-                    waterViewBanner.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.colorReject));
-                    waterCardBackground.setCardBackgroundColor(ContextCompat.getColor(getContext(), R.color.colorRejectLight));
+                    waterViewBanner.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.colorEmptyText));
+                    waterCardBackground.setCardBackgroundColor(ContextCompat.getColor(getContext(), R.color.colorEmptyCard));
                     topUpWaterButton.setBackground(getResources().getDrawable(R.drawable.custom_button_red));
                 }
             }
