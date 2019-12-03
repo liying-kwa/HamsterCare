@@ -89,7 +89,7 @@
             android:layout_height="wrap_content" />
 
         <TextView
-            android:text="Help Tab"
+            android:text="Settings Tab"
             android:textSize="20sp"
             android:textStyle="bold"
             android:paddingTop="30sp"
@@ -98,14 +98,14 @@
             android:layout_height="wrap_content"/>
 
         <ImageView
-            android:src="@drawable/help_tab"
+            android:src="@drawable/settings_tab"
             android:layout_gravity="center"
             android:paddingTop="10sp"
             android:layout_width="150dp"
             android:layout_height="300dp"/>
 
         <TextView
-            android:text="@string/helpTab"
+            android:text="@string/settingsTab"
             android:gravity="left"
             android:paddingTop="10sp"
             android:layout_width="match_parent"

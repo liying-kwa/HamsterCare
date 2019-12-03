@@ -34,8 +34,13 @@
         \nSimply do so through the \"Snap A Picture!\" button.
     </string>
 
-    <string name="helpTab">
-        Basic information about how to use the app is stated here.
-        \nAny feedback or further issues can be sent to us via the contact information provided.
+    <string name="settingsTab">
+        Set/Change your hamster\'s name and/or profile picture here.
+        \nClick on the blue button with an arrow to choose an image:
+        \n  1. Use our default hamster profile picture
+        \n  2. Upload an image from your phone gallery
+        \n  3. Take a photo with your phone camera
+        \n  4. Use the latest HamsterCare photo taken in the Photo Tab
+        \nClick the green button with a tick to confirm changes for both name and profile picture.
     </string>
 </resources>
