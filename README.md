@@ -1,5 +1,5 @@
 # HamsterCare
-SUTD 50.001 Introduction to Information Systems 1D Code
+SUTD 50.001 Introduction to Information Systems: 1D Android Code
 
 ## Abstract
 In 2011, SPCA reported a 10% rise in pet neglect cases from the year before, Furthermore, it was noted that at least 70% of the 1027 reported cases of animal cruelty involved pet neglect, likely due to the owners’ busy lifestyles and lack of commitment towards taking care of the pet. Despite the high investment of time and effort in taking care of a pet, people are still interested in owning one because of the various benefits they provide, such as stress-relief and companionship.
